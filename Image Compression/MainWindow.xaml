@@ -1,0 +1,30 @@
+﻿<Window x:Class="Image_Compression.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Image_Compression"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1000">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="70px" VerticalAlignment="Top" Margin="20,50,0,0">
+            <TextBox Name="SourcePath" Width="800px" Height="30px"  HorizontalAlignment="Left" FontSize="18px" ></TextBox>
+            <Button Name="browse_btn" Margin="20,0,0,0" Width="130px" Height="50px" Click="browse_btn_Click" Foreground="Brown" Background="Transparent" BorderBrush="Brown" BorderThickness="2">Browse</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="70px" VerticalAlignment="Top" Margin="20,150,0,0">
+            <TextBox Name="destPath" Width="800px" Height="30px"  HorizontalAlignment="Left" FontSize="18px" ></TextBox>
+            <Button Name="dest_btn" Margin="20,0,0,0" Width="130px" Height="50px" Click="dest_btn_Click" Foreground="Brown" Background="Transparent" BorderBrush="Brown" BorderThickness="2">Destination File</Button>
+        </StackPanel>
+
+        <Button Name="compress_btn" Width="200px" Height="60px" VerticalAlignment="Center" Click="compress_btn_Click" FontSize="20px" Foreground="Brown" Background="Transparent" BorderBrush="Brown" BorderThickness="2">Compress</Button>
+
+        <StackPanel Height="30px" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,140" Orientation="Horizontal">
+            <ProgressBar Height="30"  Name="progressBar" VerticalAlignment="Bottom" Width="800" />
+            <TextBlock x:Name="pctg" FontSize="20px" VerticalAlignment="Bottom"></TextBlock>
+        </StackPanel>
+
+        <Button Name="pause_btn" VerticalAlignment="Bottom" Width="200" Height="60px" Margin="0,0,0,50" Background="Transparent" BorderBrush="Brown" BorderThickness="2px" Foreground="Brown" FontSize="20px" Click="pause_btn_Click"> Pause</Button>
+       
+    </Grid>
+</Window>
