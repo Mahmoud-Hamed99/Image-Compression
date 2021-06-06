@@ -49,7 +49,26 @@ namespace Image_Compression
             }
         }
 
+        public static void WriteToFile(string historyFile, string data)
+        {
+            if (!File.Exists("history.txt"))
+            {
+                using (StreamWriter writer = new StreamWriter(historyFile))
+                {
+                    writer.WriteLine(Path.GetFileName(data));
+                }
+            }
+            else
+            {
+                using (StreamWriter writer = File.AppendText(historyFile))
+                {
+                    writer.WriteLine(Path.GetFileName(data));
+                }
+            }
+        }
+
        
+
 
     }
 }

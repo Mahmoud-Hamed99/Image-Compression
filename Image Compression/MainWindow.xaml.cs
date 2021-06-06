@@ -120,7 +120,21 @@ namespace Image_Compression
                     string ext = System.IO.Path.GetExtension(files[index]).ToUpper();
                     if (ext == ".PNG" || ext == ".JPG")
                     {
-                        Helper.CompressImage(files[index], destPath_);
+                        if(File.Exists("history.txt"))
+                        { 
+                             string[] lines = File.ReadAllLines("history.txt");
+                            if (!lines.Contains(System.IO.Path.GetFileName(files[index])))
+                            {
+                                Helper.CompressImage(files[index], destPath_);
+                                Helper.WriteToFile("history.txt", files[index].ToString());
+                            }
+                        }
+                        else
+                        {
+                            Helper.CompressImage(files[index], destPath_);
+                            Helper.WriteToFile("history.txt", files[index].ToString());
+                        }
+
                     }
 
                     Dispatcher.Invoke(() =>
@@ -149,5 +163,13 @@ namespace Image_Compression
 
         }
 
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists("history.txt"))
+            {
+                File.Delete("history.txt");
+                System.Windows.MessageBox.Show("History Deleted");
+            }
+        }
     }
 }

@@ -24,7 +24,12 @@
             <TextBlock x:Name="pctg" FontSize="20px" VerticalAlignment="Bottom"></TextBlock>
         </StackPanel>
 
-        <Button Name="pause_btn" VerticalAlignment="Bottom" Width="200" Height="60px" Margin="0,0,0,50" Background="Transparent" BorderBrush="Brown" BorderThickness="2px" Foreground="Brown" FontSize="20px" Click="pause_btn_Click"> Pause</Button>
-       
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,40" Orientation="Horizontal">
+            <Button Name="pause_btn"  Width="200" Height="60px"  Background="Transparent" BorderBrush="Brown" BorderThickness="2px" Foreground="Brown" FontSize="20px" Click="pause_btn_Click">Pause</Button>
+
+            <Button Name="clear" VerticalAlignment="Bottom" Width="200" Height="60px" Margin="30,0,0,0" Background="Transparent" BorderBrush="Red" BorderThickness="3px" Foreground="Brown" FontSize="20px" Click="clear_Click">Clear History</Button>
+
+        </StackPanel>
+      
     </Grid>
 </Window>
